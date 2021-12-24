@@ -16,12 +16,12 @@ function App() {
     }
     const millisecondsPerDay = 24 * 60 * 60 * 1000; // hours*minutes*seconds*milliseconds
     const daysUntil = Math.round(
-      Math.abs((startDate - endDate) / millisecondsPerDay)
+      Math.abs((startDate.valueOf() - endDate.valueOf()) / millisecondsPerDay)
     );
     setDaysUntil(daysUntil);
 
     // Calculate days between dates
-    const diff = endDate - startDate; // Milliseconds between datetime objects
+    const diff = endDate.valueOf() - startDate.valueOf(); // Milliseconds between datetime objects
     let days = Math.ceil(diff / millisecondsPerDay);
 
     // Subtract two weekend days for every week in between
